@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "00f53bc9-a58e-49c5-a6d0-9d4343d70550",
+		"name": "Supply Chain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Part A",
+			"item": [
+				{
+					"name": "PO by VG Pharma from Sun Pharma",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "DIST001",
+									"description": "Buyer CRN ",
+									"type": "text"
+								},
+								{
+									"key": "sellerCRN",
+									"value": "MAN001",
+									"description": "Seller CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"description": "Drug quantity",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "distributor",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/createPO",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"createPO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Shipment by Sun Pharma",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "DIST001",
+									"description": "Buyer CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "listOfAssets",
+									"value": "{\"assets\": [\"001\",\"002\",\"003\"]}",
+									"description": "Drug list composite keys",
+									"type": "text"
+								},
+								{
+									"key": "transporterCRN",
+									"value": "TRA001",
+									"description": "Transporter CRN",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "manufacturer",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/createShipment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"createShipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shipment by FedEx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "DIST001",
+									"description": "Buyer CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "transporterCRN",
+									"value": "TRA001",
+									"description": "Transporter CRN",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "transporter",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/updateShipment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateShipment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Part B",
+			"item": [
+				{
+					"name": "PO by Upgrad from VG Pharma",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "RET002",
+									"description": "Buyer CRN",
+									"type": "text"
+								},
+								{
+									"key": "sellerCRN",
+									"value": "DIST001",
+									"description": "Seller CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"description": "Drug quantity",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "retailer",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/createPO",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"createPO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Shipment by VG Pharma",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "RET002",
+									"description": "Buyer CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "listOfAssets",
+									"value": "{\"assets\": [\"001\",\"002\"]}",
+									"description": "Drug list composite keys",
+									"type": "text"
+								},
+								{
+									"key": "transporterCRN",
+									"value": "TRA002",
+									"description": "Transporter CRN",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "distributor",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/createShipment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"createShipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shipment by Blue Dart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "buyerCRN",
+									"value": "RET002",
+									"description": "Buyer CRN",
+									"type": "text"
+								},
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "transporterCRN",
+									"value": "TRA002",
+									"description": "Transporter CRN",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "transporter",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/updateShipment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updateShipment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4fdc7f75-1dc9-44c3-b75b-eeb962e0c0da",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "72783293-e871-48e3-af58-5ff76b6f794f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Part C",
+			"item": [
+				{
+					"name": "Retail Drug: Akash buys Drug from Upgrad",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "drugName",
+									"value": "Paracetamol",
+									"description": "Name of the Drug",
+									"type": "text"
+								},
+								{
+									"key": "serialNo",
+									"value": "001",
+									"description": "Drug serial number",
+									"type": "text"
+								},
+								{
+									"key": "retailerCRN",
+									"value": "RET002",
+									"description": "Retailer CRN",
+									"type": "text"
+								},
+								{
+									"key": "customerAadhar",
+									"value": "AAD001",
+									"description": "Customer Aadhar Number",
+									"type": "text"
+								},
+								{
+									"key": "organisationType",
+									"value": "retailer",
+									"description": "Organization type requesting endpoint",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/retailDrug",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailDrug"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

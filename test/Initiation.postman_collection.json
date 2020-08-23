@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "0c7f3ab7-00ff-4f61-9793-62dcf02329d2",
+		"name": "Initiation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Manufacturer: Sun Pharma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "companyCRN",
+							"value": "MAN001",
+							"type": "text"
+						},
+						{
+							"key": "companyName",
+							"value": "Sun Pharma",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Chennai",
+							"type": "text"
+						},
+						{
+							"key": "organisationRole",
+							"value": "Manufacturer",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "manufacturer",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/registerCompany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transporter: FedEx",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "companyCRN",
+							"value": "TRA001",
+							"description": "Company CRN",
+							"type": "text"
+						},
+						{
+							"key": "companyName",
+							"value": "FedEx",
+							"description": "Company Nanme",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Delhi",
+							"description": "Company Location",
+							"type": "text"
+						},
+						{
+							"key": "organisationRole",
+							"value": "Transporter",
+							"description": "Organization Role",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "transporter",
+							"description": "Organization type requesting endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/registerCompany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transporter: Blue Dart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "companyCRN",
+							"value": "TRA002",
+							"description": "Company CRN",
+							"type": "text"
+						},
+						{
+							"key": "companyName",
+							"value": "Blue Dart",
+							"description": "Company Nanme",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Bangalore",
+							"description": "Company Location",
+							"type": "text"
+						},
+						{
+							"key": "organisationRole",
+							"value": "Transporter",
+							"description": "Organization Role",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "transporter",
+							"description": "Organization type requesting endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/registerCompany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Distributor: VG Pharma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "companyCRN",
+							"value": "DIST001",
+							"description": "Company CRN",
+							"type": "text"
+						},
+						{
+							"key": "companyName",
+							"value": "VG Pharma",
+							"description": "Company Nanme",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Vizag",
+							"description": "Company Location",
+							"type": "text"
+						},
+						{
+							"key": "organisationRole",
+							"value": "Distributor",
+							"description": "Organization Role",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "distributor",
+							"description": "Organization type requesting endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/registerCompany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Retailer: Upgrad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "companyCRN",
+							"value": "RET002",
+							"description": "Company CRN",
+							"type": "text"
+						},
+						{
+							"key": "companyName",
+							"value": "upgrad",
+							"description": "Company Nanme",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Mumbai",
+							"description": "Company Location",
+							"type": "text"
+						},
+						{
+							"key": "organisationRole",
+							"value": "Retailer",
+							"description": "Organization Role",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "retailer",
+							"description": "Organization type requesting endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/registerCompany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Drug: Paracetamol 001",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "drugName",
+							"value": "Paracetamol",
+							"description": "Drug name",
+							"type": "text"
+						},
+						{
+							"key": "serialNo",
+							"value": "001",
+							"description": "Drug Serial Number",
+							"type": "text"
+						},
+						{
+							"key": "mfgDate",
+							"value": "01-08-2020",
+							"description": "Drug Manufacturing Date",
+							"type": "text"
+						},
+						{
+							"key": "expDate",
+							"value": "01-08-2023",
+							"description": "Drug Expiry Date",
+							"type": "text"
+						},
+						{
+							"key": "companyCRN",
+							"value": "MAN001",
+							"description": "Drug Manufacturer CRN",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "manufacturer",
+							"description": "Organization type requesting this endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/addDrug",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Drug: Paracetamol 002",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "drugName",
+							"value": "Paracetamol",
+							"description": "Drug name",
+							"type": "text"
+						},
+						{
+							"key": "serialNo",
+							"value": "002",
+							"description": "Drug Serial Number",
+							"type": "text"
+						},
+						{
+							"key": "mfgDate",
+							"value": "01-08-2020",
+							"description": "Drug Manufacturing Date",
+							"type": "text"
+						},
+						{
+							"key": "expDate",
+							"value": "01-08-2023",
+							"description": "Drug Expiry Date",
+							"type": "text"
+						},
+						{
+							"key": "companyCRN",
+							"value": "MAN001",
+							"description": "Drug Manufacturer CRN",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "manufacturer",
+							"description": "Organization type requesting this endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/addDrug",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Drug: Paracetamol 003",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "drugName",
+							"value": "Paracetamol",
+							"description": "Drug name",
+							"type": "text"
+						},
+						{
+							"key": "serialNo",
+							"value": "001",
+							"description": "Drug Serial Number",
+							"type": "text"
+						},
+						{
+							"key": "mfgDate",
+							"value": "01-08-2020",
+							"description": "Drug Manufacturing Date",
+							"type": "text"
+						},
+						{
+							"key": "expDate",
+							"value": "01-08-2023",
+							"description": "Drug Expiry Date",
+							"type": "text"
+						},
+						{
+							"key": "companyCRN",
+							"value": "MAN001",
+							"description": "Drug Manufacturer CRN",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "manufacturer",
+							"description": "Organization type requesting this endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/addDrug",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Drug: Paracetamol 004",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "drugName",
+							"value": "Paracetamol",
+							"description": "Drug name",
+							"type": "text"
+						},
+						{
+							"key": "serialNo",
+							"value": "004",
+							"description": "Drug Serial Number",
+							"type": "text"
+						},
+						{
+							"key": "mfgDate",
+							"value": "01-08-2020",
+							"description": "Drug Manufacturing Date",
+							"type": "text"
+						},
+						{
+							"key": "expDate",
+							"value": "01-08-2023",
+							"description": "Drug Expiry Date",
+							"type": "text"
+						},
+						{
+							"key": "companyCRN",
+							"value": "MAN001",
+							"description": "Drug Manufacturer CRN",
+							"type": "text"
+						},
+						{
+							"key": "organisationType",
+							"value": "manufacturer",
+							"description": "Organization type requesting this endpoint",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/addDrug",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

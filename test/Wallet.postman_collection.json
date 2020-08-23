@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "80bfd0e3-49fa-460c-87f8-a70322fe9d00",
+		"name": "Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manufacturer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "certificatePath",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "privateKeyPath",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/wallet/manufacturer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallet",
+						"manufacturer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Distributor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "certificatePath",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "privateKeyPath",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/wallet/distributor",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallet",
+						"distributor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retailer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "certificatePath",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "privateKeyPath",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/wallet/retailer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallet",
+						"retailer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "certificatePath",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "privateKeyPath",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/wallet/consumer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallet",
+						"consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transporter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "certificatePath",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "privateKeyPath",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/wallet/transporter",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wallet",
+						"transporter"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
