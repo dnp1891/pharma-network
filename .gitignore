@@ -1,3 +1,4 @@
 /network/channel-artifacts/*
 /network/crypto-config/*
 /chaincode/node_modules/*
+/application/node_modules/*
