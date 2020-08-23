@@ -135,7 +135,7 @@ installChaincode() {
   setGlobals "$PEER" "$ORG"
   VERSION=${3:-1.0}
   set -x
-  peer chaincode install -n certnet -v "${VERSION}" -l "${LANGUAGE}" -p "${CC_SRC_PATH}" >&log.txt
+  peer chaincode install -n pharmanet -v "${VERSION}" -l "${LANGUAGE}" -p "${CC_SRC_PATH}" >&log.txt
   res=$?
   set +x
   cat log.txt
@@ -155,12 +155,12 @@ instantiateChaincode() {
   # the "-o" option
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode instantiate -o orderer.pharma-network.com:7050 -C "$CHANNEL_NAME" -n certnet -l "${LANGUAGE}" -v "${VERSION}" -c '{"Args":["org.pharma-network.certnet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
+    peer chaincode instantiate -o orderer.pharma-network.com:7050 -C "$CHANNEL_NAME" -n pharmanet -l "${LANGUAGE}" -v "${VERSION}" -c '{"Args":["org.pharma-network.pharmanet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode instantiate -o orderer.pharma-network.com:7050 --tls "$CORE_PEER_TLS_ENABLED" --cafile $ORDERER_CA -C $CHANNEL_NAME -n certnet -l ${LANGUAGE} -v ${VERSION} -c '{"Args":["org.pharma-network.certnet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
+    peer chaincode instantiate -o orderer.pharma-network.com:7050 --tls "$CORE_PEER_TLS_ENABLED" --cafile $ORDERER_CA -C $CHANNEL_NAME -n pharmanet -l ${LANGUAGE} -v ${VERSION} -c '{"Args":["org.pharma-network.pharmanet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
     res=$?
     set +x
   fi
@@ -170,7 +170,7 @@ instantiateChaincode() {
   echo
 }
 
-retailereChaincode() {
+upgradeChaincode() {
   PEER=$1
   ORG=$2
   setGlobals $PEER $ORG
@@ -178,18 +178,18 @@ retailereChaincode() {
 
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode retailere -o orderer.pharma-network.com:7050 -C $CHANNEL_NAME -n certnet -l ${LANGUAGE} -v ${VERSION} -p ${CC_SRC_PATH} -c '{"Args":["org.pharma-network.certnet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
+    peer chaincode upgrade -o orderer.pharma-network.com:7050 -C $CHANNEL_NAME -n pharmanet -l ${LANGUAGE} -v ${VERSION} -p ${CC_SRC_PATH} -c '{"Args":["org.pharma-network.pharmanet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member','cosnsumerMSP.member','transporterMSP.member')" >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode retailere -o orderer.pharma-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n certnet -l ${LANGUAGE} -v ${VERSION} -p ${CC_SRC_PATH} -c '{"Args":["org.pharma-network.certnet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member')" >&log.txt
+    peer chaincode upgrade -o orderer.pharma-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n pharmanet -l ${LANGUAGE} -v ${VERSION} -p ${CC_SRC_PATH} -c '{"Args":["org.pharma-network.pharmanet:instantiate"]}' -P "OR ('manufacturerMSP.member','distributorMSP.member','retailerMSP.member','cosnsumerMSP.member','transporterMSP.member')" >&log.txt
     res=$?
     set +x
   fi
   cat log.txt
-  verifyResult $res "Chaincode retailere on peer${PEER}.${ORG} has failed"
-  echo "===================== Chaincode is retailered on peer${PEER}.${ORG} on channel '$CHANNEL_NAME' ===================== "
+  verifyResult $res "Chaincode upgrade on peer${PEER}.${ORG} has failed"
+  echo "===================== Chaincode is upgraded on peer${PEER}.${ORG} on channel '$CHANNEL_NAME' ===================== "
   echo
 }
 
@@ -210,7 +210,7 @@ chaincodeQuery() {
     sleep $DELAY
     echo "Attempting to Query peer${PEER}.${ORG} ...$(($(date +%s) - starttime)) secs"
     set -x
-    peer chaincode query -C $CHANNEL_NAME -n certnet -c '{"Args":["org.pharma-network.certnet:instantiate"]}' >&log.txt
+    peer chaincode query -C $CHANNEL_NAME -n pharmanet -c '{"Args":["org.pharma-network.pharmanet:instantiate"]}' >&log.txt
     res=$?
     set +x
     test $res -eq 0 && VALUE=$(cat log.txt | awk '/Query Result/ {print $NF}')
@@ -245,12 +245,12 @@ chaincodeInvoke() {
   # it using the "-o" option
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode invoke -o orderer.pharma-network.com:7050 -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.pharma-network.certnet:createStudent","0001","Aakash Bansal","connect@aakashbansal.com","15"]}' >&log.txt
+    peer chaincode invoke -o orderer.pharma-network.com:7050 -C $CHANNEL_NAME -n pharmanet $PEER_CONN_PARMS -c '{"Args":["org.pharma-network.pharmanet:registerCompany","MAN100","Alembic","Vadodara","manufacturer"]}' >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode invoke -o orderer.pharma-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.pharma-network.certnet:createStudent","0001","Aakash Bansal","connect@aakashbansal.com"]}' >&log.txt
+    peer chaincode invoke -o orderer.pharma-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n pharmanet $PEER_CONN_PARMS -c '{"Args":["org.pharma-network.pharmanet:registerCompany","MAN100","Alembic","Vadodara","manufacturer"]}' >&log.txt
     res=$?
     set +x
   fi
