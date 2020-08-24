@@ -227,7 +227,7 @@ function replacePrivateKey() {
   sed $OPTS "s/TRANSPORTER_CA_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose-e2e.yml
   # If MacOSX, remove the temporary backup of the docker-compose file
   if [ "$ARCH" == "Darwin" ]; then
-    rm docker-compose-e2e.ymlt
+    rm docker-compose-e2e.yml
   fi
 }
 

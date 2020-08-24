@@ -258,7 +258,7 @@ services:
     volumes:
       - /var/run/:/host/var/run/
       - ./../chaincode:/opt/gopath/src/chaincode
-     # - ./../chaincode-advanced:/opt/gopath/src/chaincode-advanced
+      - ./../chaincode-advanced:/opt/gopath/src/chaincode-advanced
       - ./crypto-config:/opt/gopath/src/crypto
     networks:
       - pharma
